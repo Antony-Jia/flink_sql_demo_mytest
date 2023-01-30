@@ -141,11 +141,11 @@ t_env.execute_sql("""
 """)
 
 
-transaction_table = t_env.from_path("TransactionTable")
-token_transfer_table = t_env.from_path("TokenTransferTable")
+#transaction_table = t_env.from_path("TransactionTable")
+#token_transfer_table = t_env.from_path("TokenTransferTable")
 
 
-result_table = transaction_table.select(col("block_timestamp"), col("from_address"))
+#result_table = transaction_table.select(col("block_timestamp"), col("from_address"))
 
 
 tablefilter = t_env.sql_query(
@@ -164,9 +164,9 @@ tablefilter = t_env.sql_query(
 )
 
 
-class TokenFilter(FilterFunction):
-    def filter(self, value):
-        return value["L_hash"] == '0x1010267dc21b55d256b3660f4cca65d4a27085b8a6219b846518654f8ef893f9'
+#class TokenFilter(FilterFunction):
+#    def filter(self, value):
+#        return value["L_hash"] == '0x1010267dc21b55d256b3660f4cca65d4a27085b8a6219b846518654f8ef893f9'
 
 # tablefilter.filter(col("L_hash") == '0x1010267dc21b55d256b3660f4cca65d4a27085b8a6219b846518654f8ef893f9').execute_insert('print').wait()
 
